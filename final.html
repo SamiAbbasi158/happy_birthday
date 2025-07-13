@@ -1,0 +1,295 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Happy Birthday My Wifey! 🎉</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Arial', sans-serif;
+        }
+
+        body {
+            background-color: #fce4ec;
+            color: #212121;
+            overflow-x: hidden;
+        }
+
+        .page {
+            width: 100vw;
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            padding: 20px;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        h1 {
+            font-size: 2.5rem;
+            margin-bottom: 20px;
+            color: #051d41;
+            text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.1);
+        }
+
+        p {
+            font-size: 1.1rem;
+            line-height: 1.6;
+            max-width: 90%;
+            margin-bottom: 20px;
+        }
+
+        .btn {
+            padding: 12px 28px;
+            background-color: #880e4f;
+            color: white;
+            border: none;
+            border-radius: 40px;
+            font-size: 1rem;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            margin-top: 20px;
+            box-shadow: 0 3px 6px rgba(0, 0, 0, 0.15);
+        }
+
+        .btn:hover {
+            background-color: #ad1457;
+            transform: translateY(-2px);
+        }
+
+        #page1 { background: linear-gradient(135deg, #e1bee7, #bbdefb); }
+        #page2 { background: linear-gradient(135deg, #bbdefb, #b39ddb); }
+        #page3 { background: linear-gradient(135deg, #b39ddb, #9575cd); }
+        #page4 { background: linear-gradient(135deg, #9575cd, #7e57c2); }
+
+        .photo-gallery {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 12px;
+            margin: 25px 0;
+            max-width: 95%;
+        }
+
+        .photo {
+            width: 140px;
+            height: 140px;
+            border-radius: 10px;
+            object-fit: cover;
+            box-shadow: 0 2px 6px rgba(0, 0, 0, 0.2);
+            transition: transform 0.3s ease;
+        }
+
+        .photo:hover {
+            transform: scale(1.04);
+        }
+
+        .memory {
+            background-color: #ffffffdd;
+            padding: 15px;
+            border-radius: 10px;
+            margin: 10px;
+            box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+            max-width: 90%;
+        }
+
+        .confetti, .heart {
+            position: absolute;
+            opacity: 0;
+        }
+
+        .heart {
+            font-size: 20px;
+            color: #ec407a;
+            animation: float 4s ease-in-out infinite;
+        }
+
+        @keyframes float {
+            0% { transform: translateY(0) rotate(0deg); opacity: 1; }
+            100% { transform: translateY(-100px) rotate(360deg); opacity: 0; }
+        }
+
+        .nav-dots {
+            position: fixed;
+            right: 10px;
+            top: 50%;
+            transform: translateY(-50%);
+            display: flex;
+            flex-direction: column;
+            gap: 8px;
+            z-index: 99;
+        }
+
+        .dot {
+            width: 10px;
+            height: 10px;
+            border-radius: 50%;
+            background-color: rgba(255, 255, 255, 0.5);
+            cursor: pointer;
+        }
+
+        .dot.active {
+            background-color: #ffffff;
+            transform: scale(1.3);
+        }
+
+        @media (max-width: 600px) {
+            h1 { font-size: 2rem; }
+            p { font-size: 1rem; }
+            .photo { width: 100px; height: 100px; }
+        }
+    </style>
+</head>
+<body>
+    <div class="page" id="page1">
+        <h1>Happy Birthday Wifey! 🎂</h1>
+        <p>Today is all about celebrating YOU! 💕</p>
+        <p>You’re not just my partner, you're my world. 💖</p>
+        <button class="btn" onclick="nextPage()">Let the Love Begin!</button>
+
+        <div class="nav-dots">
+            <div class="dot active" onclick="goToPage(0)"></div>
+            <div class="dot" onclick="goToPage(1)"></div>
+            <div class="dot" onclick="goToPage(2)"></div>
+            <div class="dot" onclick="goToPage(3)"></div>
+        </div>
+    </div>
+
+    <div class="page" id="page2">
+        <h1>Our Sweet Memories 💑</h1>
+        <p>These are the moments I cherish the most with you...</p>
+
+        <div class="photo-gallery">
+            <img src="IMG-20250507-WA0008.jpg" alt="Wifey Photo 1" class="photo">
+            <img src="IMG-20250507-WA0010.jpg" alt="Wifey Photo 2" class="photo">
+            <img src="IMG-20250507-WA0011.jpg" alt="Wifey Photo 3" class="photo">
+            <img src="IMG-20250507-WA0012.jpg" alt="Wifey Photo 4" class="photo">
+            <img src="IMG-20250507-WA0013.jpg" alt="Wifey Photo 5" class="photo">
+            <img src="IMG-20250507-WA0014.jpg" alt="Wifey Photo 6" class="photo">
+        </div>
+
+        <button class="btn" onclick="nextPage()">What Makes You Special</button>
+    </div>
+
+    <div class="page" id="page3">
+        <h1>Why You’re My Everything 🌟</h1>
+
+        <div class="memory">
+            <h2>Your Beautiful Soul</h2>
+            <p>You light up my life with your kindness, care, and warmth. You're truly a blessing.</p>
+        </div>
+
+        <div class="memory">
+            <h2>Your Laughter</h2>
+            <p>Your smile and laugh are my favorite melodies. You make life magical every single day.</p>
+        </div>
+
+        <div class="memory">
+            <h2>Your Loyalty</h2>
+            <p>No matter what, you've always been by my side. You're my strength, my heart, my forever.</p>
+        </div>
+
+        <button class="btn" onclick="nextPage()">Final Message</button>
+    </div>
+
+    <div class="page" id="page4">
+        <h1>Happy Birthday My Love 💝</h1>
+        <p>May your year be filled with joy, dreams come true, and endless love.</p>
+        <p>I'm so lucky to call you my wife — and even luckier to share this journey with you.</p>
+        <p>Thank you for being the most amazing part of my life.</p>
+        <p>Forever yours,</p>
+        <p>Your Love ❤️</p>
+
+        <button class="btn" onclick="goToPage(0)">Replay the Love</button>
+    </div>
+
+    <script>
+        let currentPage = 0;
+        const pages = document.querySelectorAll('.page');
+        const dots = document.querySelectorAll('.dot');
+
+        pages.forEach((page, index) => {
+            if (index !== 0) page.style.display = 'none';
+        });
+
+        function nextPage() {
+            goToPage(currentPage + 1);
+        }
+
+        function goToPage(index) {
+            if (index >= pages.length) index = 0;
+            if (index < 0) index = pages.length - 1;
+
+            pages[currentPage].style.display = 'none';
+            dots[currentPage].classList.remove('active');
+
+            currentPage = index;
+            pages[currentPage].style.display = 'flex';
+            dots[currentPage].classList.add('active');
+
+            if (currentPage === pages.length - 1) {
+                createConfetti();
+                createHearts();
+            }
+        }
+
+        document.addEventListener('keydown', (e) => {
+            if (e.key === 'ArrowRight') nextPage();
+            if (e.key === 'ArrowLeft') goToPage(currentPage - 1);
+        });
+
+        function createConfetti() {
+            const colors = ['#e91e63', '#9c27b0', '#2196f3', '#4caf50'];
+            for (let i = 0; i < 80; i++) {
+                const confetti = document.createElement('div');
+                confetti.className = 'confetti';
+                confetti.style.backgroundColor = colors[Math.floor(Math.random() * colors.length)];
+                confetti.style.left = Math.random() * 100 + 'vw';
+                confetti.style.top = -10 + 'px';
+                confetti.style.width = Math.random() * 8 + 4 + 'px';
+                confetti.style.height = Math.random() * 8 + 4 + 'px';
+                confetti.style.position = 'absolute';
+                confetti.style.opacity = '1';
+                confetti.style.transition = `top ${Math.random() * 3 + 2}s ease-out`;
+
+                document.getElementById('page4').appendChild(confetti);
+
+                setTimeout(() => {
+                    confetti.style.top = '100vh';
+                }, 0);
+
+                setTimeout(() => {
+                    confetti.remove();
+                }, 5000);
+            }
+        }
+
+        function createHearts() {
+            for (let i = 0; i < 15; i++) {
+                const heart = document.createElement('div');
+                heart.className = 'heart';
+                heart.innerHTML = '❤️';
+                heart.style.left = Math.random() * 100 + 'vw';
+                heart.style.top = Math.random() * 100 + 'vh';
+                heart.style.fontSize = Math.random() * 20 + 10 + 'px';
+                heart.style.animationDuration = Math.random() * 3 + 2 + 's';
+                heart.style.animationDelay = Math.random() * 2 + 's';
+
+                document.getElementById('page4').appendChild(heart);
+
+                setTimeout(() => {
+                    heart.remove();
+                }, 5000);
+            }
+
+            setTimeout(createHearts, 300);
+        }
+    </script>
+</body>
+</html>
